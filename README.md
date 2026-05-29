@@ -45,6 +45,7 @@
 - **Дисплей:** OLED 128×64, SSD1306, I2C
 - **Кнопки:** 4 штуки (UP, DOWN, OK, BACK)
 - **Интерфейс iButton:** через GPIO0 (чтение) и GPIO2 (эмуляция)
+- **Питание:** tp4056 + li-ion батарея
 
 ---
 
@@ -62,6 +63,8 @@
 | Emulation TX | GPIO2 | D4 |
 
 ---
+## Схема для wemos d1 mini
+<img src="assets/espie scheme.jpg" alt="ESPie device" width="1000"/>
 
 ## 📦 Библиотеки
 
