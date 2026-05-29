@@ -66,6 +66,8 @@
 ## Схема для wemos d1 mini
 <img src="assets/espie scheme.jpg" alt="ESPie device" width="1000"/>
 
+---
+
 ## 📦 Библиотеки
 
 Установите через **Arduino IDE → Library Manager**:
