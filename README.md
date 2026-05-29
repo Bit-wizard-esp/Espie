@@ -5,7 +5,7 @@
 <p align="center">
   Инструмент для работы с iButton ключами (DS1990A / DS2401) на базе ESP8266
 </p>
-
+<img src="assets/espie logo.jpg" alt="ESPie device" width="900"/>
 <p align="center">
   <img src="https://img.shields.io/badge/Platform-ESP8266-blue?style=flat-square&logo=espressif"/>
   <img src="https://img.shields.io/badge/IDE-Arduino_IDE-teal?style=flat-square&logo=arduino"/>
