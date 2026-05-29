@@ -92,13 +92,13 @@ git clone https://github.com/Bit-wizard-esp/espie.git
 
 ---
 ## 🚀 Установка через flash download tool
-1. Скачиваете - [flash download tool](https://dl.espressif.com/public/flash_download_tool.zip)
+1. Скачиваете [flash download tool](https://dl.espressif.com/public/flash_download_tool.zip)
 
 2. Распаковываете zip архив
 
 3. Выбираете плату и порт
 
-4. Загружаете файл из - [релизов](https://github.com/Bit-wizard-esp/Espie/releases)
+4. Загружаете файл из [релизов](https://github.com/Bit-wizard-esp/Espie/releases)
 
 5. Начинаете прошивку
 
@@ -165,7 +165,10 @@ espie/
 - [ ] Добавить экспорт/импорт через Serial
 
 ---
+## Фото тестовой версии проекта:
+<img src="assets/fronton.JPG" alt="ESPie device" width="300"/> <img src="assets/frontoff.JPG" alt="ESPie device" width="300"/> <img src="assets/back.JPG" alt="ESPie device" width="300"/>
 
+---
 ## 📜 Лицензия
 
 MIT License — делай что хочешь, но оставь ссылку на проект.
