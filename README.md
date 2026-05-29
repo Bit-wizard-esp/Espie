@@ -98,7 +98,7 @@ git clone https://github.com/Bit-wizard-esp/espie.git
 
 3. Выбираете плату и порт
 
-4. Загружаете файл из релизов
+4. Загружаете файл из - [релизов](https://github.com/Bit-wizard-esp/Espie/releases)
 
 5. Начинаете прошивку
 
