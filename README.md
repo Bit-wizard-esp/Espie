@@ -166,7 +166,7 @@ espie/
 
 ---
 ## Фото тестовой версии проекта:
-<img src="assets/fronton.JPG" alt="ESPie device" width="300"/> <img src="assets/frontoff.JPG" alt="ESPie device" width="300"/> <img src="assets/back.JPG" alt="ESPie device" width="300"/>
+<img src="assets/fronton.JPG" alt="ESPie device" width="250"/> <img src="assets/frontoff.JPG" alt="ESPie device" width="250"/> <img src="assets/back.JPG" alt="ESPie device" width="250"/>
 
 ---
 ## 📜 Лицензия
