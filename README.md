@@ -92,7 +92,7 @@ git clone https://github.com/Bit-wizard-esp/espie.git
 
 ---
 ## 🚀 Установка через flash download tool
-1. Скачиваете - [flash doenload tool](https://dl.espressif.com/public/flash_download_tool.zip)
+1. Скачиваете - [flash download tool](https://dl.espressif.com/public/flash_download_tool.zip)
 
 2. Распаковываете zip архив
 
