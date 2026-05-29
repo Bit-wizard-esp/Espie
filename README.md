@@ -1,8 +1,6 @@
 # 🔑 ESPie — iButton Tool
 
-<p align="center">
-  <img src="assets/logo.png" alt="ESPeer8 Logo" width="200"/>
-</p>
+
 
 <p align="center">
   Инструмент для работы с iButton ключами (DS1990A / DS2401) на базе ESP8266
