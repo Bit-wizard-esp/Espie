@@ -108,6 +108,9 @@ git clone https://github.com/Bit-wizard-esp/espie.git
 5. Начинаете прошивку
 
 ---
+## 🚀 Установка через [сайт](https://bit-wizard-esp.github.io/)
+
+---
 
 ## 🗂️ Структура проекта
 
