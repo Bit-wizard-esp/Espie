@@ -91,6 +91,18 @@ git clone https://github.com/Bit-wizard-esp/espie.git
 5. Выберите порт и нажмите **Upload**
 
 ---
+## 🚀 Установка через flash download tool
+1. Скачиваете - [flash doenload tool](https://dl.espressif.com/public/flash_download_tool.zip)
+
+2. Распаковываете zip архив
+
+3. Выбираете плату и порт
+
+4. Загружаете файл из релизов
+
+5. Начинаете прошивку
+
+---
 
 ## 🗂️ Структура проекта
 
