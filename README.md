@@ -1,4 +1,4 @@
-# 🔑 ESPeer8 — iButton Tool
+# 🔑 ESPie — iButton Tool
 
 <p align="center">
   <img src="assets/logo.png" alt="ESPeer8 Logo" width="200"/>
@@ -20,7 +20,7 @@
 
 ## О проекте
 
-**ESPeer8** — портативное устройство на ESP8266 для чтения, эмуляции и брутфорса iButton ключей серии DS1990A/DS2401. Всё управление — через OLED дисплей и 4 кнопки. Ключи сохраняются в EEPROM (до 10 штук).
+**ESPie** — портативное устройство на ESP8266 для чтения, эмуляции и брутфорса iButton ключей серии DS1990A/DS2401. Всё управление — через OLED дисплей и 4 кнопки. Ключи сохраняются в EEPROM (до 10 штук).
 
 > Проект разработан в **Arduino IDE**.
 
@@ -81,10 +81,10 @@
 
 1. Клонируйте репозиторий:
 ```bash
-git clone https://github.com/ВАШ_НИК/espeer8.git
+git clone https://github.com/Bit-wizard-esp/espie.git
 ```
 
-2. Откройте `espeer8.ino` в **Arduino IDE**
+2. Откройте `main.ino` в **Arduino IDE**
 
 3. Установите все библиотеки из списка выше
 
@@ -97,8 +97,8 @@ git clone https://github.com/ВАШ_НИК/espeer8.git
 ## 🗂️ Структура проекта
 
 ```
-espeer8/
-├── espeer8.ino        # Основной файл, setup/loop, обработка кнопок
+espie/
+├── main.ino        # Основной файл, setup/loop, обработка кнопок
 ├── config.h           # Пины, размеры экрана, константы, структуры
 ├── globals.h          # Объявления глобальных переменных
 ├── display.cpp/.h     # Весь код отрисовки меню и экранов
