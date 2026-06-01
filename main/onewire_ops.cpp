@@ -14,34 +14,73 @@ bool readKey(uint8_t* buffer) {
   return false;
 }
 
+// Записывает один байт побитово напрямую через пин (протокол DS1990A)
+static void iButtonWriteByte(uint8_t data) {
+  for (int bit = 0; bit < 8; bit++) {
+    if (data & 1) {
+      // Логическая 1: длинный импульс LOW ~60мкс
+      digitalWrite(PIN_READ_WRITE, LOW);
+      pinMode(PIN_READ_WRITE, OUTPUT);
+      delayMicroseconds(60);
+      pinMode(PIN_READ_WRITE, INPUT);
+      digitalWrite(PIN_READ_WRITE, HIGH);
+      delay(10);
+    } else {
+      // Логический 0: короткий импульс LOW
+      digitalWrite(PIN_READ_WRITE, LOW);
+      pinMode(PIN_READ_WRITE, OUTPUT);
+      pinMode(PIN_READ_WRITE, INPUT);
+      digitalWrite(PIN_READ_WRITE, HIGH);
+      delay(10);
+    }
+    data >>= 1;
+  }
+}
+
 bool writeKeyToDevice(uint8_t* data) {
-  showMessage("Place target key\non RX pin", 1500);
-  delay(1000);
-  showMessage("Writing...", 500);
-
-  pinMode(PIN_READ_WRITE, OUTPUT);
-  ow.reset();
-  delay(10);
-  ow.write(0x99);
-  for (int i = 0; i < 8; i++) { ow.write(data[i]); delay(1); }
-  delay(100);
-  ow.reset();
-  ow.write(0xC3);
-  ow.write(0x00);
-  ow.write(0x00);
-  delay(200);
-
-  uint8_t crc = 0;
-  for (int i = 0; i < 7; i++) crc = ow.crc8(&data[i], 1);
-
+  showMessage("Place blank key\non RX pin", 2000);
   delay(500);
-  pinMode(PIN_READ_WRITE, INPUT_PULLUP);
+  showMessage("Writing...", 0);
 
+  // Шаг 1: Разблокировка записи — команда 0xD1 + логический 0
+  ow.skip();
+  ow.reset();
+  ow.write(0xD1);
+  digitalWrite(PIN_READ_WRITE, LOW);
+  pinMode(PIN_READ_WRITE, OUTPUT);
+  delayMicroseconds(60);           // лог. 0 = длинный LOW
+  pinMode(PIN_READ_WRITE, INPUT);
+  digitalWrite(PIN_READ_WRITE, HIGH);
+  delay(10);
+
+  // Шаг 2: Запись 8 байт — команда 0xD5 + данные побитово
+  ow.skip();
+  ow.reset();
+  ow.write(0xD5);
+  for (int i = 0; i < 8; i++) {
+    iButtonWriteByte(data[i]);
+  }
+
+  // Шаг 3: Фиксация записи — команда 0xD1 + логическая 1
+  ow.reset();
+  ow.write(0xD1);
+  digitalWrite(PIN_READ_WRITE, LOW);
+  pinMode(PIN_READ_WRITE, OUTPUT);
+  delayMicroseconds(10);           // лог. 1 = короткий LOW
+  pinMode(PIN_READ_WRITE, INPUT);
+  digitalWrite(PIN_READ_WRITE, HIGH);
+  delay(10);
+
+  // Шаг 4: Верификация
+  delay(500);
   uint8_t verify[8];
   if (readKey(verify)) {
-    if (memcmp(data, verify, 8) == 0) { showMessage("Write verified!", 1000); return true; }
+    if (memcmp(data, verify, 8) == 0) {
+      showMessage("Write OK!\nVerified!", 1500);
+      return true;
+    }
   }
-  showMessage("Write failed!\nCheck key", 1500);
+  showMessage("Write FAILED!\nCheck key/pin", 2000);
   return false;
 }
 
